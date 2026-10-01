@@ -16,7 +16,8 @@
   min-height:100vh;
   display:flex; align-items:center; justify-content:center;
   text-align:center;
-  padding:120px 48px 140px;
+  /* top: clears the 64px fixed nav; bottom: clears the treeline horizon */
+  padding:136px 48px 140px;
   background:linear-gradient(180deg,#00B4D8 0%,#48CAE4 45%,#90E0EF 100%);
 }
 .hero::before {
@@ -48,7 +49,7 @@
 /* Crescent moon wrapper */
 .hero-moon-wrap {
   display:none;
-  position:absolute; top:68px; right:14.5%;
+  position:absolute; top:112px; right:14.5%;
   z-index:2; pointer-events:none;
   animation:moonFadeIn .8s ease both;
 }
@@ -56,7 +57,7 @@
 [data-theme="dark"] .hero-moon-wrap { display:block; }
 .hero-sun-wrap {
   display:block;
-  position:absolute; top:68px; right:14.5%;
+  position:absolute; top:88px; right:14.5%;
   z-index:2; pointer-events:none;
   overflow:hidden;
   border-radius:50%;
@@ -119,7 +120,6 @@
 .hero-inner {
   position:relative; z-index:5; max-width:900px;
   will-change:transform;
-  margin-top:-80px;
 }
 .hero-badge {
   display:inline-flex; align-items:center; gap:8px;
