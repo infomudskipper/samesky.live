@@ -11,10 +11,15 @@
 /* ══════════════════════════════════════════════════
    HERO
 ══════════════════════════════════════════════════ */
-/* Note: in the original single-file version this selector was preceded by a
-   stray `[data-theme="dark"]` left over from a removed logo block, so it only
-   ever matched in dark mode. Kept as-is to preserve the rendered design. */
-[data-theme="dark"] .hero::before {
+.hero {
+  position:relative; overflow:hidden;
+  min-height:100vh;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center;
+  padding:120px 48px 140px;
+  background:linear-gradient(180deg,#00B4D8 0%,#48CAE4 45%,#90E0EF 100%);
+}
+.hero::before {
   content:''; position:absolute; inset:0;
   background-image:radial-gradient(circle,rgba(255,255,255,.07) 1px,transparent 1px);
   background-size:28px 28px; pointer-events:none;
@@ -57,14 +62,7 @@
   border-radius:50%;
   width:124px; height:124px;
 }
-[data-theme="dark"] .hero-sun-wrap {
-  display:block;
-  position:absolute; top:68px; right:14.5%;
-  z-index:2; pointer-events:none;
-  overflow:hidden;
-  border-radius:50%;
-  width:124px; height:124px;
-}
+[data-theme="dark"] .hero-sun-wrap { display:none; }
 
 /* Aurora borealis — night hero only */
 .hero-aurora {

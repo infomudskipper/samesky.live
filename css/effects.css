@@ -1,16 +1,11 @@
 /* ══════════════════════════════════════════════════
    HIDDEN OBJECTS + PARTICLES
 ══════════════════════════════════════════════════ */
-/* Note: in the original single-file version a stray `100%{…} }` fragment just
-   above this rule caused browsers to discard it entirely, so it has never been
-   applied on the live page. It is kept here, disabled, to preserve the current
-   design. Uncomment to position the hidden objects as originally intended.
 .hidden-obj {
   position:absolute; z-index:20; cursor:pointer;
   transition:transform .25s var(--spring); user-select:none;
   pointer-events:auto;
 }
-*/
 .hidden-obj:hover { transform:scale(1.4) !important; }
 .hidden-obj.pop { animation:objPop .5s var(--spring) forwards; }
 @keyframes objPop {
