@@ -5,7 +5,6 @@
   nav { padding:0 20px; }
   .nav-links { gap:14px; }
   .nav-links a { display:none; }
-  .hero { padding:100px 24px 80px; }
   .hero-same-sky { letter-spacing:-2px; }
   .intro-strip { padding:28px 20px; }
   .section { padding:64px 24px; }
@@ -38,11 +37,52 @@
   #passport-widget { bottom:80px; right:14px; }
   #soundBtn { bottom:24px; left:14px; }
 }
+
+/* ── Phones & small tablets: layout refinements ── */
+@media (max-width:768px) {
+  /* Hero: use the small-viewport height so mobile browser bars don't cause jumps */
+  .hero { min-height:100vh; min-height:100svh; }
+  /* top: room for the nav + sun so they never overlap the badge/title */
+  .hero { padding:180px 24px 110px; }
+  .hero-badge { font-size:9px; letter-spacing:1.5px; padding:6px 14px; margin-bottom:28px; }
+  .hero-sun-wrap, [data-theme="dark"] .hero-sun-wrap { right:6%; transform:scale(.72); transform-origin:top right; }
+  .hero-moon-wrap { right:8%; transform:scale(.8); transform-origin:top right; }
+
+  /* Animals: quote on top, deer + owl side by side below — no overlap */
+  .animals-inner { flex-wrap:wrap; align-items:flex-end; justify-content:space-between; padding:48px 24px 0; min-height:0; }
+  .animals-quote-wrap { order:-1; flex:0 0 100%; padding:0; margin-bottom:28px; }
+  .mid-deer, .mid-owl { position:relative; left:auto; right:auto; bottom:auto; }
+  .mid-deer svg { width:104px; height:auto; }
+  .mid-owl svg { width:96px; height:auto; }
+
+  /* Bigger touch targets for the hidden passport objects (visual position unchanged) */
+  .hidden-obj { padding:10px; margin:-10px; }
+
+  /* Contact picker opens left-aligned so it stays on screen */
+  .mail-picker { right:auto; left:0; }
+}
+
+/* ── Phones ── */
 @media (max-width:480px) {
-  .animals-quote-wrap { padding:0 80px; }
-  .animals-quote { font-size:14px; }
+  .animals-quote { font-size:17px; }
+  .hero-same-sky { font-size:clamp(64px,22vw,96px); }
+
+  /* Passport: compact pill, panel fits the screen */
+  #passport-widget { bottom:16px; right:12px; }
+  .pp-label { display:none; }
+  .pp-toggle { padding:8px 12px; }
+  .pp-panel { width:min(284px, calc(100vw - 24px)); }
 }
 
 @media (min-width:769px) and (max-width:1024px) {
   #passport-widget { bottom:104px; right:18px; }
+}
+
+/* ── Tablets & phones in landscape: keep the sun/moon clear of the centred title ── */
+@media (min-width:769px) and (max-width:1024px) {
+  .hero-sun-wrap, .hero-moon-wrap { right:4%; }
+}
+@media (max-height:500px) and (orientation:landscape) {
+  .hero-sun-wrap, [data-theme="dark"] .hero-sun-wrap { right:3%; transform:scale(.6); transform-origin:top right; }
+  .hero-moon-wrap { right:3%; transform:scale(.7); transform-origin:top right; }
 }
