@@ -1,0 +1,61 @@
+/* ══════════════════════════════════════════════════
+   FILM SECTION
+══════════════════════════════════════════════════ */
+.film-section {
+  padding:96px 48px; position:relative; overflow:hidden;
+  transition:background .6s ease;
+}
+[data-theme="light"] .film-section { background:#1B4332; }
+[data-theme="dark"] .film-section { background:#050D18; }
+.film-section::before {
+  content:''; position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:24px 24px; pointer-events:none;
+}
+.film-inner {
+  max-width:1160px; margin:0 auto;
+  display:grid; grid-template-columns:1fr 1fr; gap:80px;
+  align-items:center; position:relative; z-index:1;
+}
+.film-text .sec-label { color:rgba(255,255,255,.4); }
+.film-text .sec-label::before { background:var(--mg); }
+.film-text .sec-title { color:white; }
+.film-text .sec-sub { color:rgba(255,255,255,.5); margin-bottom:36px; }
+.film-stat { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+.film-stat-item {
+  background:rgba(255,255,255,.06); border-radius:14px; padding:20px;
+  transition:transform .3s var(--spring), background .3s;
+}
+.film-stat-item:hover {
+  transform:translateY(-3px) scale(1.02);
+  background:rgba(255,255,255,.09);
+}
+[data-theme="dark"] .film-stat-item {
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.07);
+}
+.film-stat-num {
+  font-family:'Baloo 2',cursive; font-size:32px; font-weight:800;
+  color:var(--mg); line-height:1;
+}
+.film-stat-lbl {
+  font-family:'Nunito Sans',sans-serif; font-size:10px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+  color:rgba(255,255,255,.35); margin-top:4px;
+}
+.film-visual {
+  aspect-ratio:3/4; border-radius:20px; overflow:hidden;
+  position:relative;
+  background:linear-gradient(180deg,#00B4D8 0%,#90E0EF 45%,#FDD97E 100%);
+  box-shadow:0 40px 80px rgba(0,0,0,.5);
+  transition:transform .5s var(--spring), box-shadow .5s ease;
+}
+.film-visual:hover {
+  transform:translateY(-6px) scale(1.01);
+  box-shadow:0 56px 96px rgba(0,0,0,.6);
+}
+[data-theme="dark"] .film-visual {
+  background:linear-gradient(180deg,#020810 0%,#0A1830 45%,#1A0A04 100%);
+  box-shadow:0 40px 80px rgba(0,0,0,.8);
+}
+.film-visual-inner { position:absolute; inset:0; }

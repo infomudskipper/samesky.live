@@ -1,0 +1,42 @@
+/* ══════════════════════════════════════════════════
+   PARTNERS
+══════════════════════════════════════════════════ */
+.partners-section {
+  padding:80px 48px;
+  background:var(--partners-bg);
+  transition:background .6s ease;
+}
+.partners-inner { max-width:1160px; margin:0 auto; text-align:center; }
+.partners-grid {
+  display:flex; align-items:center; justify-content:center;
+  gap:40px; flex-wrap:wrap; margin-top:48px;
+}
+.partner-card {
+  background:var(--card-bg); border:1px solid var(--card-border);
+  border-radius:18px; padding:28px 24px;
+  display:flex; flex-direction:column; align-items:center; gap:10px;
+  width:190px; min-width:0; flex-shrink:0;
+  transition:transform .35s var(--spring), box-shadow .35s ease, background .5s, border-color .5s;
+}
+.partner-card:hover { transform:translateY(-4px) scale(1.02); }
+[data-theme="light"] .partner-card:hover { box-shadow:0 12px 32px rgba(30,21,8,.08); }
+[data-theme="dark"] .partner-card:hover { box-shadow:0 12px 32px rgba(0,0,0,.45); }
+.partner-role {
+  font-family:'Nunito Sans',sans-serif; font-size:9px;
+  font-weight:700; letter-spacing:2.5px; text-transform:uppercase;
+  color:var(--text-meta); transition:color .5s;
+}
+.partner-name {
+  font-family:'Baloo 2',cursive; font-size:18px; font-weight:800;
+  color:var(--text-primary); transition:color .5s;
+  text-align:center; line-height:1.2;
+}
+.partner-desc {
+  font-family:'Nunito',sans-serif; font-size:11px;
+  color:var(--text-secondary); text-align:center; line-height:1.5;
+  max-width:140px; transition:color .5s;
+}
+.partner-divider {
+  font-family:'Nunito Sans',sans-serif; font-size:11px;
+  color:var(--text-meta); font-weight:700; transition:color .5s;
+}

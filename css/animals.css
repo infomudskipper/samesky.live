@@ -1,0 +1,79 @@
+/* ══════════════════════════════════════════════════
+   ANIMALS SECTION — mid-page scroll surprise
+══════════════════════════════════════════════════ */
+.animals-section {
+  position:relative; overflow:hidden;
+  min-height:300px;
+  background:linear-gradient(180deg,#0d2218 0%,#162e20 50%,#0d2218 100%);
+  display:flex; align-items:center; justify-content:center;
+}
+/* Subtle texture */
+.animals-section::before {
+  content:''; position:absolute; inset:0;
+  background-image:radial-gradient(circle,rgba(82,183,136,.04) 1px,transparent 1px);
+  background-size:20px 20px; pointer-events:none;
+}
+[data-theme="dark"] .animals-section {
+  background:linear-gradient(180deg,#050D18 0%,#080E18 50%,#050D18 100%);
+}
+
+.animals-inner {
+  position:relative; width:100%; max-width:1160px;
+  padding:40px 48px; margin:0 auto;
+  display:flex; align-items:flex-end; justify-content:center;
+  min-height:280px;
+}
+
+/* Center quote */
+.animals-quote-wrap {
+  text-align:center; position:relative; z-index:4;
+  padding:0 160px;
+}
+.animals-label {
+  font-family:'Nunito Sans',sans-serif; font-size:10px; font-weight:700;
+  letter-spacing:3px; text-transform:uppercase; color:rgba(82,183,136,.6);
+  display:block; margin-bottom:12px;
+}
+.animals-quote {
+  font-family:'Baloo 2',cursive; font-weight:600;
+  font-size:clamp(16px,2.2vw,24px); color:rgba(255,255,255,.65);
+  line-height:1.5; font-style:italic; max-width:480px; margin:0 auto;
+}
+
+/* Deer — slides from left */
+.mid-deer {
+  position:absolute; bottom:0; left:48px;
+  z-index:3; cursor:pointer;
+  transform:translateX(-140px);
+  opacity:0;
+  transition:transform .9s var(--spring), opacity .6s ease;
+}
+.mid-deer.active { transform:translateX(0); opacity:1; }
+.mid-deer:hover svg { transform:scale(1.04); }
+.mid-deer svg { transition:transform .4s var(--spring); display:block; }
+
+/* Owl — slides from right */
+.mid-owl {
+  position:absolute; bottom:0; right:48px;
+  z-index:3; cursor:pointer;
+  transform:translateX(140px);
+  opacity:0;
+  transition:transform .9s var(--spring) .15s, opacity .6s ease .15s;
+}
+.mid-owl.active { transform:translateX(0); opacity:1; }
+.mid-owl:hover svg { transform:scale(1.04); }
+.mid-owl svg { transition:transform .4s var(--spring); display:block; }
+
+/* Owl blink */
+.owl-eye-l { animation:owlBlink 5s ease-in-out infinite; transform-origin:center; }
+.owl-eye-r { animation:owlBlink 5s ease-in-out infinite .08s; transform-origin:center; }
+@keyframes owlBlink {
+  0%,87%,100%{transform:scaleY(1);}93%{transform:scaleY(0.07);}
+}
+
+/* Sparkle from deer */
+.sparkle {
+  position:absolute; font-size:20px; pointer-events:none; z-index:10;
+  animation:pBurst .9s ease forwards;
+  --dx:-20px; --dy:-50px;
+}

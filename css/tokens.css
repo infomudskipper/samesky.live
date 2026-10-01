@@ -1,0 +1,36 @@
+/* ══════════════════════════════════════════════════
+   DESIGN TOKENS — DAY
+══════════════════════════════════════════════════ */
+:root {
+  --mg:#F5A623; --mg-d:#C97D0A; --mg-l:#FDD97E; --mg-pl:#FEF5DC;
+  --fr:#2D6A4F; --fr-d:#1B4332; --fr-m:#52B788; --fr-l:#B7E4C7;
+  --sk:#00B4D8; --sk-d:#0077A8; --sk-l:#90E0EF; --sk-pl:#CAF0F8;
+  --ink:#1E1508; --ink-m:#4A3520; --ink-l:#8C6E45; --ink-xl:#C4A882;
+  --cream:#FDF8F0; --white:#FFFEF9; --rule:rgba(30,21,8,0.07);
+  --page-bg:var(--cream); --card-bg:var(--white); --card-border:var(--rule);
+  --section-bg:var(--cream); --partners-bg:var(--cream);
+  --nav-bg:rgba(0,180,216,0.92); --intro-bg:#1B4332;
+  --text-primary:var(--ink); --text-secondary:var(--ink-l); --text-meta:var(--ink-xl);
+  --toggle-bg:rgba(255,255,255,0.15); --toggle-border:rgba(255,255,255,0.25);
+  --toggle-text:rgba(255,255,255,0.85);
+  /* Spring easing — used throughout */
+  --spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ══════════════════════════════════════════════════
+   DESIGN TOKENS — NIGHT
+══════════════════════════════════════════════════ */
+[data-theme="dark"] {
+  --mg:#FFB830; --mg-d:#E09800; --mg-l:#FFD97E; --mg-pl:rgba(255,184,48,0.08);
+  --fr:#52B788; --fr-d:#0D1F16; --fr-m:#74C99F; --fr-l:rgba(82,183,136,0.2);
+  --sk:#38C8F0; --sk-d:#00A8D0; --sk-l:#7ADCF8; --sk-pl:rgba(56,200,240,0.08);
+  --ink:#F0EAE0; --ink-m:#C8BFB0; --ink-l:#8A9BA8; --ink-xl:#506070;
+  --cream:#080E18; --white:#0E1824; --rule:rgba(255,255,255,0.06);
+  --page-bg:#080E18; --card-bg:#0E1A28; --card-border:rgba(255,255,255,0.06);
+  --section-bg:#080E18; --partners-bg:#080E18;
+  --nav-bg:rgba(5,10,20,0.88); --intro-bg:#050D18;
+  --text-primary:#F0EAE0; --text-secondary:#8A9BA8; --text-meta:#506070;
+  --toggle-bg:rgba(255,255,255,0.08); --toggle-border:rgba(255,255,255,0.15);
+  --toggle-text:rgba(255,255,255,0.7);
+}

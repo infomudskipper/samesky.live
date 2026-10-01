@@ -1,0 +1,16 @@
+/* ══════════════════════════════════════════════════
+   TICKER
+══════════════════════════════════════════════════ */
+.ticker { height:44px; overflow:hidden; white-space:nowrap; display:flex; align-items:center; transition:background .6s ease; }
+[data-theme="light"] .ticker { background:#F5A623; }
+[data-theme="dark"] .ticker { background:#1A3A28; }
+.ticker-inner { display:inline-flex; animation:ticker 28s linear infinite; }
+.ticker-item {
+  font-family:'Baloo 2',cursive; font-size:13px; font-weight:700;
+  padding:0 24px; opacity:.75; transition:color .5s;
+}
+[data-theme="light"] .ticker-item { color:#1B4332; }
+[data-theme="dark"] .ticker-item { color:#52B788; }
+.ticker-sep { opacity:.4; padding:0 2px; }
+@keyframes ticker { to{transform:translateX(-50%);} }
+

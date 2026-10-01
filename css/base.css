@@ -1,0 +1,38 @@
+/* ══════════════════════════════════════════════════
+   BASE
+══════════════════════════════════════════════════ */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body {
+  font-family:'Nunito',sans-serif;
+  background:var(--page-bg);
+  color:var(--text-primary);
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+  transition:background .6s ease, color .6s ease;
+}
+
+/* ══════════════════════════════════════════════════
+   THEME TRANSITION RIPPLE
+══════════════════════════════════════════════════ */
+#theme-ripple {
+  position:fixed; border-radius:50%;
+  width:10px; height:10px;
+  margin:-5px 0 0 -5px;
+  z-index:9990; pointer-events:none;
+  transform:scale(0); opacity:0;
+  will-change:transform, opacity;
+}
+#theme-ripple.expand {
+  transform:scale(320);
+  opacity:1;
+  transition:transform .55s cubic-bezier(.4,0,.2,1), opacity .05s;
+}
+#theme-ripple.fade {
+  opacity:0;
+  transition:opacity .35s ease .08s;
+}
+/* Golden hour overlay */
+#golden-overlay{position:fixed;inset:0;z-index:9989;pointer-events:none;opacity:0;background:radial-gradient(ellipse at 50% 30%,rgba(255,150,40,.82) 0%,rgba(200,70,10,.7) 50%,rgba(40,10,4,.4) 100%);}
+#golden-overlay.flash{opacity:1;transition:opacity .05s;}
+#golden-overlay.fade{opacity:0;transition:opacity .45s ease .12s;}
